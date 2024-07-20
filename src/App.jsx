@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
 
-    const [section, setSection] = useState(null);
+    const [section, setSection] = useState('Dashboard');
     const sectionRefs = {
         Dashboard: useRef(null),
         Credit: useRef(null),
@@ -20,19 +20,19 @@ function App() {
             sectionRefs[sectionName].current.scrollIntoView({
                 behavior: 'smooth'
             });
-        },5000);
+        },0);
     };
 
     return (
         <div className="flex">
             <div className="w-1/6 h-screen bg-gray-800 text-white flex flex-col items-start p-4">
-              <button onClick={() => handleClick('Dashboard')} className="my-4 font-bold">Dashboard</button>
-              <button onClick={() => handleClick('Credit')} className="my-4 font-bold">Credits</button>
-              <button onClick={() => handleClick('Debit')} className="my-4 font-bold border-2">Debit</button>
-              <button onClick={() => handleClick('TransactionHistory')} className=" font-bold border-2 text-start mx-0 my-4">Transaction History</button>
+              <button onClick={() => handleClick('Dashboard')} className="my-4 font-bold text-start">Dashboard</button>
+              <button onClick={() => handleClick('Credit')} className="my-4 font-bold text-start">Credits</button>
+              <button onClick={() => handleClick('Debit')} className="my-4 font-bold text-start">Debit</button>
+              <button onClick={() => handleClick('TransactionHistory')} className="my-4 font-bold text-start">Transaction History</button>
             </div>
 
-            <div className="w-screen p-4 overflow-auto bg-slate-400">
+            <div className="w-screen h-screen overflow-auto bg-slate-400">
               {section === 'Dashboard' && (
                   <div ref={sectionRefs.Dashboard}><Dashboard /></div>
               )}
