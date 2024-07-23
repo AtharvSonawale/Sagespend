@@ -16,20 +16,15 @@ function App() {
 
     const handleClick = (sectionName) => {
         setSection(sectionName);
-        setTimeout(() => {
-            sectionRefs[sectionName].current.scrollIntoView({
-                behavior: 'smooth'
-            });
-        },0);
     };
 
     return (
-        <div className="flex">
-            <div className="w-1/6 h-screen bg-gray-800 text-white flex flex-col items-start p-4">
-              <button onClick={() => handleClick('Dashboard')} className="my-4 font-bold text-start">Dashboard</button>
-              <button onClick={() => handleClick('Credit')} className="my-4 font-bold text-start">Credits</button>
-              <button onClick={() => handleClick('Debit')} className="my-4 font-bold text-start">Debit</button>
-              <button onClick={() => handleClick('TransactionHistory')} className="my-4 font-bold text-start">Transaction History</button>
+        <div className="flex bg-slate-400">
+            <div className="w-auto h-screen bg-gray-800 text-white flex flex-col items-start p-4 rounded-r-3xl">
+              <button onClick={() => handleClick('Dashboard')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Dashboard</button>
+              <button onClick={() => handleClick('Credit')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Credits</button>
+              <button onClick={() => handleClick('Debit')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Debit</button>
+              <button onClick={() => handleClick('TransactionHistory')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Transaction History</button>
             </div>
 
             <div className="w-screen h-screen overflow-auto bg-slate-400">
