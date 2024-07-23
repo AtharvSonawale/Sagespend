@@ -19,12 +19,12 @@ function App() {
     };
 
     return (
-        <div className="flex bg-slate-400">
-            <div className="w-auto h-screen bg-gray-800 text-white flex flex-col items-start p-4 rounded-r-3xl">
-              <button onClick={() => handleClick('Dashboard')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Dashboard</button>
-              <button onClick={() => handleClick('Credit')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Credits</button>
-              <button onClick={() => handleClick('Debit')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Debit</button>
-              <button onClick={() => handleClick('TransactionHistory')} className="font-bold text-start p-2 m-2 hover:rounded-xl hover:bg-slate-600 duration-100">Transaction History</button>
+        <div className="flex font-semibold bg-slate-400">
+            <div className="w-auto h-screen bg-gray-800 text-white flex flex-col items-start p-4 rounded-r-3xl text-xl">
+              <button onClick={() => handleClick('Dashboard')} className="text-start py-2 px-4 m-2 hover:rounded-2xl hover:bg-slate-600 duration-100 border-gray-50 hover:border  hover:shadow-lg">Dashboard</button>
+              <button onClick={() => handleClick('Credit')} className="text-start py-2 px-4 m-2 hover:rounded-2xl hover:bg-slate-600 duration-100 border-gray-50 hover:border  hover:shadow-lg">Credits</button>
+              <button onClick={() => handleClick('Debit')} className="text-start py-2 px-4 m-2 hover:rounded-2xl hover:bg-slate-600 duration-100 border-gray-50 hover:border  hover:shadow-lg">Debit</button>
+              <button onClick={() => handleClick('TransactionHistory')} className="text-start py-2 px-4 m-2 hover:rounded-2xl hover:bg-slate-600 duration-100 border-gray-50 hover:border hover:shadow-lg">Transaction History</button>
             </div>
 
             <div className="w-screen h-screen overflow-auto bg-slate-400">
