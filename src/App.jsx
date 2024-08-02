@@ -19,16 +19,16 @@ function App() {
   };
 
   return (
-    <div className="flex font-semibold bg-zinc-900">
-      <div className="w-auto h-screen bg-zinc-800 text-white flex flex-col items-start p-4 rounded-r-3xl text-xl shadow-xl">
-        <button onClick={() => handleClick('Dashboard')} className="text-start py-2 px-4 m-2 hover:rounded-xl hover:bg-zinc-600 duration-100 border-gray-50 hover:shadow-xl">Dashboard</button>
-        <button onClick={() => handleClick('Credit')} className="text-start py-2 px-4 m-2 hover:rounded-xl hover:bg-zinc-600 duration-100 border-gray-50 hover:shadow-xl">Credits</button>
-        <button onClick={() => handleClick('Debit')} className="text-start py-2 px-4 m-2 hover:rounded-xl hover:bg-zinc-600 duration-100 border-gray-50 hover:shadow-xl">Debit</button>
-        <button onClick={() => handleClick('TransactionHistory')} className="text-start py-2 px-4 m-2 hover:rounded-xl hover:bg-zinc-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Transaction History</button>
+    <div className="flex font-semibold bg-gray-900">
+      <div className="w-auto h-auto my-4 bg-gray-800 text-white flex flex-col items-start p-4 rounded-r-3xl text-s shadow-xl">
+      <button onClick={() => handleClick('Dashboard')} className="text-start py-2 px-4 m-2 rounded-xl bg-gray-700 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Dashboard</button>
+        <button onClick={() => handleClick('Credit')} className="text-start py-2 px-4 m-2 rounded-xl bg-gray-700 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Credits</button>
+        <button onClick={() => handleClick('Debit')} className="text-start py-2 px-4 m-2 rounded-xl bg-gray-700 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Debit</button>
+        <button onClick={() => handleClick('TransactionHistory')} className="text-start py-2 px-4 m-2 rounded-xl bg-gray-700 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Transaction History</button>
       </div>
 
-      <div className="w-screen h-screen overflow-auto bg-zinc-900">
-        <TransactionProvider>
+      <div className="w-screen h-screen overflow-auto bg-gray-900">
+          <TransactionProvider>
           {section === 'Dashboard' && <div ref={sectionRefs.Dashboard}><Dashboard /></div>}
           {section === 'Credit' && <div ref={sectionRefs.Credit}><Credit /></div>}
           {section === 'Debit' && <div ref={sectionRefs.Debit}><Debit /></div>}

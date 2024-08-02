@@ -5,11 +5,10 @@ function TransactionHistory() {
   const { transaction } = useContext(TransactionContext);
 
   return (
-    <div>
-      <h1 className="font-bold p-2 bg-zinc-800 m-2 text-2xl rounded-lg text-white">
-        Transaction History
+    <div className="m-4">
+      <h1 className="rounded-lg px-2 py-1 bg-gray-800 text-white text-2xl font-thin shadow-xl">        Transaction History
       </h1>
-      <section className="bg-white font-semibold p-2 m-2 text-xl rounded-lg text-zinc-800 shadow-2xl">
+      <section className="bg-white rounded-lg px-2 py-1 my-2 text-gray-900 text-sm font-normal shadow-xl">
         <p>{transaction}</p>
       </section>
     </div>
