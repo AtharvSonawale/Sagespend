@@ -5,7 +5,7 @@ import Debit from "./components/Debit";
 import TransactionHistory from "./components/TransactionHistory";
 import Dashboard from "./components/Dashboard";
 
-function App() {
+const App = () => {
   const [section, setSection] = useState('Dashboard');
   const sectionRefs = {
     Dashboard: useRef(null),
