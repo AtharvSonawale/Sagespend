@@ -31,7 +31,7 @@ const TransactionHistory = () => {
             className="bg-white flex justify-between items-center rounded-lg px-2 py-1 my-1 text-gray-900 text-sm font-normal shadow-xl"
           >
             <span>
-              {transaction.type === 'credit' ? 'Credited' : 'Debited'} ${transaction.amount.toFixed(2)}{' '}
+              {transaction.type === 'credit' ? 'Credited' : 'Debited'} ₹{transaction.amount.toFixed(2)}{' '}
               {transaction.reason ? `- ${transaction.reason}` : ''} on {transaction.date.toLocaleString()}
             </span>
             <button

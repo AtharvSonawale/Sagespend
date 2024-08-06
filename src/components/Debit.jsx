@@ -16,7 +16,7 @@ const Debit = () => {
             className="bg-white flex justify-between items-center rounded-lg px-2 py-1 my-1 text-gray-900 text-sm font-normal shadow-xl"
           >
             <span>
-              ${debit.amount.toFixed(2)} {debit.reason ? `- ${debit.reason}` : ''}
+            ₹{debit.amount.toFixed(2)} {debit.reason ? `- ${debit.reason}` : ''}
             </span>
           </li>
         ))}

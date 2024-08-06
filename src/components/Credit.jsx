@@ -16,7 +16,7 @@ const Credit = () => {
             className="bg-white flex justify-between items-center rounded-lg px-2 py-1 my-1 text-gray-900 text-sm font-normal shadow-xl"
           >
             <span>
-              ${credit.amount.toFixed(2)} {credit.reason ? `- ${credit.reason}` : ''}
+            ₹{credit.amount.toFixed(2)} {credit.reason ? `- ${credit.reason}` : ''}
             </span>
           </li>
         ))}
