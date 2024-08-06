@@ -21,10 +21,10 @@ const App = () => {
   return (
     <div className="flex font-semibold bg-zinc-900">
       <div className="w-auto h-auto my-4 bg-zinc-800 text-white flex flex-col items-start p-4 rounded-r-3xl text-s shadow-xl">
-      <button onClick={() => handleClick('Dashboard')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-800 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Dashboard</button>
-        <button onClick={() => handleClick('Credit')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-800 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Credits</button>
-        <button onClick={() => handleClick('Debit')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-800 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Debit</button>
-        <button onClick={() => handleClick('TransactionHistory')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-800 hover:bg-gray-600 duration-100 border-gray-50 hover:shadow-xl focus:opacity-75">Transaction History</button>
+      <button onClick={() => handleClick('Dashboard')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-700 hover:bg-zinc-600 duration-100 border-zinc-50 hover:shadow-xl focus:border focus:rounded-xl focus:bg-white focus:text-black">Dashboard</button>
+        <button onClick={() => handleClick('Credit')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-700 hover:bg-zinc-600 duration-100 border-zinc-50 hover:shadow-xl focus:text-green-500 focus:border focus:rounded-xl focus:bg-white">Credits</button>
+        <button onClick={() => handleClick('Debit')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-700 hover:bg-zinc-600 duration-100 border-zinc-50 hover:shadow-xl focus:text-red-500 focus:border focus:rounded-xl focus:bg-white">Debit</button>
+        <button onClick={() => handleClick('TransactionHistory')} className="text-start py-2 px-4 m-2 rounded-xl bg-zinc-700 hover:bg-zinc-600 duration-100 border-zinc-50 hover:shadow-xl focus:text-yellow-500 focus:border focus:rounded-xl focus:bg-white">Transaction History</button>
       </div>
 
       <div className="w-screen h-screen overflow-auto bg-zinc-900">

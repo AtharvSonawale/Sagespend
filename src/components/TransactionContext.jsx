@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 const TransactionContext = createContext();
 
-const TransactionProvider = ({children}) => {
+const TransactionProvider = ({ children }) => {
   const [balance, setBalance] = useState(0);
   const [credits, setCredits] = useState([]);
   const [debits, setDebits] = useState([]);
@@ -11,41 +11,38 @@ const TransactionProvider = ({children}) => {
 
   const addCredit = (amount, reason) => {
     setBalance(balance + amount);
-    const creditTransaction = {id:Date.now(), type: 'credit', amount, reason, date: new Date()}
-
+    const creditTransaction = { id: Date.now(), type: 'credit', amount, reason, date: new Date() };
     setCredits([...credits, creditTransaction]);
-    setTransactions([...transactions, setTransactions]);
-    setMessages([...messages, `Credited $${amount.toFixed(2)}${reason ? ` for ${reason}` : ''}`]);
-  }
+    setTransactions([...transactions, creditTransaction]);
+    setMessages([...messages, `Credited ₹${amount.toFixed(2)}${reason ? ` for ${reason}` : ''}`]);
+  };
 
   const addDebit = (amount, reason) => {
-    if(amount > balance){
-      setMessages([...messages, `Cannot debit $${amount.toFixed(2)} due to insufficient balance`]);
-    }else{
+    if (amount > balance) {
+      setMessages([...messages, `Cannot debit ₹${amount.toFixed(2)} due to insufficient balance`]);
+    } else {
       setBalance(balance - amount);
-      const debitTransaction = {id:Date.now(), type: 'debit', amount, reason, date: new Date()}
-
+      const debitTransaction = { id: Date.now(), type: 'debit', amount, reason, date: new Date() };
       setDebits([...debits, debitTransaction]);
-      setTransactions([...transactions, setTransactions]);
-      setMessages([...messages, `Debited $${amount.toFixed(2)}${reason ? `for ${reason}` : ''}`]);
+      setTransactions([...transactions, debitTransaction]);
+      setMessages([...messages, `Debited ₹${amount.toFixed(2)}${reason ? ` for ${reason}` : ''}`]);
     }
-  }
+  };
 
-    const deleteTransaction = (id) => {
-      const transaction = transactions.find((t) => t.id === id);
-      if(transaction){
-        setTransactions(transactions.filter((t) => t.id !== id));
-        if(transaction.type === 'credit'){
-          setBalance(balance - transaction.amount);
-          setCredits(credits.filter((c) => c.id !== id)); 
-        }else{
-          setBalance(balance + transaction.amount);
-          setDebits(debits.filter((d) => d.id !== id));
-        }
-
-        setMessages([...messages, `Deleted transaction: ${transaction.type === 'credit' ? 'Credited' : 'Debited'} $${transaction.amount.toFixed(2)}${transaction.reason ? ` for ${transaction.reason}` : ''}`]);
+  const deleteTransaction = (id) => {
+    const transaction = transactions.find((t) => t.id === id);
+    if (transaction) {
+      setTransactions(transactions.filter((t) => t.id !== id));
+      if (transaction.type === 'credit') {
+        setBalance(balance - transaction.amount);
+        setCredits(credits.filter((c) => c.id !== id));
+      } else {
+        setBalance(balance + transaction.amount);
+        setDebits(debits.filter((d) => d.id !== id));
       }
+      setMessages([...messages, `Deleted transaction: ${transaction.type === 'credit' ? 'Credited' : 'Debited'} $${transaction.amount.toFixed(2)}${transaction.reason ? ` for ${transaction.reason}` : ''}`]);
     }
+  };
 
   return (
     <TransactionContext.Provider value={{ balance, credits, debits, transactions, messages, addCredit, addDebit, deleteTransaction }}>
@@ -54,4 +51,4 @@ const TransactionProvider = ({children}) => {
   );
 };
 
-export {TransactionContext, TransactionProvider};
+export { TransactionContext, TransactionProvider };
