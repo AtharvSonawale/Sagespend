@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     background-color: #343434;
-    /* margin: 0; */
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
 }

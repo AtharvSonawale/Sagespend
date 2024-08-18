@@ -11,7 +11,7 @@ function Dashboard() {
       <div className="my-2 rounded-lg text-white h-96 max-h-96 overflow-y-auto">
         <Chat />
       </div>
-      <div className="flex justify-center outline-none px-1 py-1">
+      <div className="flex justify-center outline-none">
         <AddTransaction />
       </div>
     </div>
